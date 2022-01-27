@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import QuestionBlock from "./components/Question/QuestionBlock";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const questions = [
+  { title: "Is this where the question goes?", answers: ["Yes", "No"] },
+  {
+    title: "How about a second question?",
+    answers: ["Sure", "Why not?", "Please don't"],
+  },
+];
+
+const App = () => {
+  return questions.map((question) => (
+    <QuestionBlock title={question.title} answers={question.answers} />
+  ));
+};
 
 export default App;
